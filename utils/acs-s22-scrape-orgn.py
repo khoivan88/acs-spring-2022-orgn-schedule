@@ -91,7 +91,7 @@ class ACSS22Orgn(scrapy.Spider):
                     'session_type': session_type,
                     # 'zoom_link': presentation_zoom_link,
                 }
-                if 'hybrid' in session_type.lower() and 'virtual' in session_type.lower():
+                if 'hybrid' in session_type.lower() or 'virtual' in session_type.lower():
                     presentation_kwargs['zoom_link'] = zoom_link
                 presentations.append(PresentationItem(presentation_kwargs))
                         # breakpoint()
@@ -108,7 +108,7 @@ class ACSS22Orgn(scrapy.Spider):
                 'session_type': session_type,
                 # 'zoom_link': zoom_link,
             }
-            if 'hybrid' in session_type.lower():
+            if 'hybrid' in session_type.lower() or 'virtual' in session_type.lower():
                 cb_kwargs['zoom_link'] = zoom_link
             yield SessionItem(cb_kwargs)
 
