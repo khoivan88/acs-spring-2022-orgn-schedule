@@ -30,7 +30,7 @@ layout: 'layouts/base.html'
             {%- for session in sessions_by_date -%}
             <div class="session">
                 <!-- <p>{{ session.date | date: '%a, %b %d, %Y' }}</p> -->
-                <h3>{{ session.title }}</h3>
+                <h3>Session: {{ session.title }}</h3>
                 <details open>
                     <summary>Details:</summary>
                     <p>Time: <span style="color: red;">{{ session.time_location }}</span></p>
@@ -42,7 +42,7 @@ layout: 'layouts/base.html'
                     </p>
                     {%- endif -%}
                     <p>Track: {{ session.track }}</p>
-                    <p>Session type: {{ session.session_type }}</p>
+                    <p>{{ session.session_type }}</p>
                     {% if session.presentations.size > 0 %}
                     <div class="presentations" x-show="open">
                         <details open>
