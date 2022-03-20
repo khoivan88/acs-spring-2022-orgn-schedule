@@ -9,7 +9,7 @@ layout: 'layouts/base.html'
 
     {%- for date in dates -%}
     <div class="max-w-screen-2xl mx-auto px-4 lg:px-0">
-        <h2 x-data="{date: new Date($el.innerText)}" x-text="date.toLocaleString(undefined, { weekday: 'short', year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit'})">{{ date }}</h2>
+        <h2 x-data="{date: new Date($el.innerText)}" x-text="date.toLocaleString(undefined, { weekday: 'short', year: 'numeric', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit'})" style="color: blue;">{{ date }}</h2>
         {%- assign sessions_by_date = futureSessions | datetime_filter: date -%}
             {%- for session in sessions_by_date -%}
                 <div class="session">
